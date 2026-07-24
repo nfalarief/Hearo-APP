@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'alphabet_screen.dart';
+import 'angka_screen.dart';
 
 class BeginnerScreen extends StatelessWidget {
   const BeginnerScreen({super.key});
@@ -76,7 +77,12 @@ class BeginnerScreen extends StatelessWidget {
                       
                       // Kartu 2: Angka
                       _buildFixedCard("assets/images/angka.png", () {
-                        print("Navigasi ke halaman Angka");
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const AngkaScreen(),
+                          ),
+                        );
                       }),
 
                     ],

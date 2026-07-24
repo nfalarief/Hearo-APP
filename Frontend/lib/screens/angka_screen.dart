@@ -1,335 +1,143 @@
 import 'package:flutter/material.dart';
 
-class AlphabetScreen extends StatefulWidget {
-  const AlphabetScreen({super.key});
+class AngkaScreen extends StatefulWidget {
+  const AngkaScreen({super.key});
 
   @override
-  State<AlphabetScreen> createState() => _AlphabetScreenState();
+  State<AngkaScreen> createState() => _AngkaScreenState();
 }
 
-class _AlphabetScreenState extends State<AlphabetScreen> {
+class _AngkaScreenState extends State<AngkaScreen> {
   final PageController _pageController = PageController();
 
   int currentIndex = 0;
 
-  final List<Map<String, String>> alphabet = [
+  final List<Map<String, String>> angka = [
     {
-      "title": "Huruf A",
-      "image": "assets/images/a.png",
+      "title": "Angka 1",
+      "image": "assets/images/1.png",
       "Cara Membentuk Isyarat :":
-          "Kepalkan tangan kanan dengan posisi ibu jari berada tegak lurus di samping jari telunjuk.",
-      "Posisi Tangan :":
-          "Posisi tangan menghadap ke depan.",
-      "tips :":
-          "Jangan masukkan ibu jari ke dalam kepalan agar tidak tertukar dengan huruf “S”.",
-      "penggunaan :":
-          " Huruf A digunakan saat mengeja nama atau kata dalam Bahasa Isyarat Indonesia."
-    },
-    {
-      "title": "Huruf B",
-      "image": "assets/images/b.png",
-      "Cara Membentuk Isyarat :":
-          "Buka telapak tangan dengan keempat jari rapat mengarah ke atas lalu tekuk ibu jari ke depan telapak tangan.",
+          "Kepalkan tangan lalu angkat jari telunjuk ke atas.",
       "Posisi Tangan :":
           "Telapak tangan menghadap ke depan.",
       "tips :":
-          "Pastikan jari-jari sangat rapat agar terlihat seperti dinding datar..",
+          "Pastikan jari telunjuk lurus dan jari lainnya tetap tertutup rapat.",
       "penggunaan :":
-          "Huruf B digunakan saat mengeja nama atau kata dalam Bahasa Isyarat Indonesia."
+          "Digunakan untuk menunjukkan angka satu dalam Bahasa Isyarat Indonesia."
     },
     {
-      "title": "Huruf C",
-      "image": "assets/images/c.png",
+      "title": "Angka 2",
+      "image": "assets/images/2.png",
       "Cara Membentuk Isyarat :":
-          "Lengkungkan keempat jari dan ibu jari hingga membentuk lengkungan setengah lingkaran.",
+          "Angkat jari telunjuk dan jari tengah membentuk huruf “V",
       "Posisi Tangan :":
-          "Tangan menyamping sehingga bentuk C terlihat jelas dari sisi lawan bicara.",
+          "Telapak tangan menghadap ke depan.",
       "tips :":
-          "Bayangkan kamu sedang memegang gelas besar.",
+          "Jaga jarak kedua jari agar terlihat jelas dan tidak terlalu rapat.",
       "penggunaan :":
-          "Huruf C digunakan saat mengeja nama atau kata dalam Bahasa Isyarat Indonesia."
+          "Digunakan untuk menunjukkan angka dua dalam Bahasa Isyarat Indonesia."
     },
     {
-      "title": "Huruf D",
-      "image": "assets/images/d.png",
+      "title": "Angka 3",
+      "image": "assets/images/3.png",
       "Cara Membentuk Isyarat :":
-          "Angkat jari telunjuk lurus ke atas sementara ujung ibu jari bertemu dengan ujung jari tengah manis dan kelingking..",
+          "Angkat jari telunjuk, jari tengah, dan ibu jari.",
       "Posisi Tangan :":
-          "Telapak tangan menghadap ke depan/samping sedikit.",
+          "Telapak tangan menghadap ke depan.",
       "tips :":
-          "Pastikan hanya telunjuk yang berdiri tegak.",
+          "Pastikan jari manis dan kelingking tetap terlipat agar tidak tertukar dengan angka lain",
       "penggunaan :":
-          "Huruf D digunakan saat mengeja nama atau kata dalam Bahasa Isyarat Indonesia."
+          "Digunakan untuk menunjukkan angka tiga dalam Bahasa Isyarat Indonesia."
     },
     {
-      "title": "Huruf E",
-      "image": "assets/images/e.png",
+      "title": "Angka 4",
+      "image": "assets/images/4.png",
       "Cara Membentuk Isyarat :":
-          "Tekuk semua jari ke arah dalam telapak tangan dengan ujung kuku menyentuh sisi ibu jari yang juga ditekuk ke dalam.",
+          "Angkat empat jari kecuali ibu jari.",
+      "Posisi Tangan :":
+          "Telapak tangan menghadap ke depan.",
+      "tips :":
+          "Rapatkan jari-jari agar bentuk angka terlihat jelas.",
+      "penggunaan :":
+          "Digunakan untuk menunjukkan angka empat dalam Bahasa Isyarat Indonesia."
+    },
+    {
+      "title": "Angka 5",
+      "image": "assets/images/5.png",
+      "Cara Membentuk Isyarat :":
+          "Buka seluruh jari tangan.",
       "Posisi Tangan :":
           "Telapak menghadap ke depan.",
       "tips :":
-          "Bentuknya mirip cakar yang menguncup rapat.",
+          "Pastikan semua jari terbuka sempurna dan tidak menekuk.",
       "penggunaan :":
-          "Huruf E digunakan saat mengeja nama atau kata dalam Bahasa Isyarat Indonesia."
+          "Digunakan untuk menunjukkan angka lima dalam Bahasa Isyarat Indonesia."
     },
     {
-      "title": "Huruf F",
-      "image": "assets/images/f.png",
+      "title": "Angka 6",
+      "image": "assets/images/6.png",
       "Cara Membentuk Isyarat :":
-          "Pertemukan ujung jari telunjuk dan ibu jari hingga membentuk lingkaran (seperti tanda OK). Tiga jari lainnya (tengah manis kelingking) dibuka tegak lurus ke atas.",
+          "Sentuhkan ibu jari dengan jari kelingking, sementara tiga jari lainnya terbuka.",
       "Posisi Tangan :":
-          "Telapak tangan menghadap ke depan.",
+          "Telapak tangan menghadap ke depan atau sedikit miring.",
       "tips :":
-          "Pastikan jari tengah manis dan kelingking benar-benar lurus agar terlihat tegas.",
+          "Pastikan lingkaran antara ibu jari dan kelingking terlihat jelas.",
       "penggunaan :":
-          "Huruf F digunakan saat mengeja nama atau kata dalam Bahasa Isyarat Indonesia."
+          "Digunakan untuk menunjukkan angka enam dalam Bahasa Isyarat Indonesia."
      },
     {
-      "title": "Huruf G",
-      "image": "assets/images/g.png",
+      "title": "Angka 7",
+      "image": "assets/images/7.png",
       "Cara Membentuk Isyarat :":
-          "Posisikan jari telunjuk dan ibu jari sejajar menunjuk ke samping secara horizontal seolah-olah sedang menunjukkan ukuran kecil. Jari lainnya mengepal.",
-      "Posisi Tangan :":
-          "Telapak tangan menghadap ke arah tubuh (menyamping).",
-      "tips :":
-          "Jarak antara telunjuk dan ibu jari jangan terlalu lebar.",
-      "penggunaan :":
-          "Huruf G digunakan saat mengeja nama atau kata dalam Bahasa Isyarat Indonesia."
-    },
-    {
-      "title": "Huruf H",
-      "image": "assets/images/h.png",
-      "Cara Membentuk Isyarat :":
-          "Mirip dengan huruf G namun gunakan dua jari (telunjuk dan jari tengah) yang menunjuk ke samping secara sejajar.",
-      "Posisi Tangan :":
-          "Tangan diposisikan horizontal ke samping.",
-      "tips :":
-          "Pastikan jari manis dan kelingking tertutup rapat oleh ibu jari.",
-      "penggunaan :":
-          "Huruf H digunakan saat mengeja nama atau kata dalam Bahasa Isyarat Indonesia."
-    },
-    {
-      "title": "Huruf I",
-      "image": "assets/images/i.png",
-      "Cara Membentuk Isyarat :":
-          "Kepalkan tangan dan angkat jari kelingking tegak lurus ke atas.",
+          "Sentuhkan ibu jari dengan jari manis, sementara jari lainnya terbuka.",
       "Posisi Tangan :":
           "Telapak tangan menghadap ke depan.",
       "tips :":
-          "Pastikan jari kelingking tidak melengkung.",
+          "Jangan tertukar dengan angka enam atau delapan, perhatikan jari yang menyentuh ibu jari.",
       "penggunaan :":
-          "Huruf I digunakan saat mengeja nama atau kata dalam Bahasa Isyarat Indonesia."
+          "Digunakan untuk menunjukkan angka tujuh dalam Bahasa Isyarat Indonesia."
     },
     {
-      "title": "Huruf J",
-      "image": "assets/images/j.png",
+      "title": "Angka 8",
+      "image": "assets/images/8.png",
       "Cara Membentuk Isyarat :":
-          "Bentuk huruf I lalu gerakkan kelingking membentuk pola huruf “J” di udara.",
-      "Posisi Tangan :":
-          "Gerakan dilakukan menghadap ke depan",
-      "tips :":
-          "Gerakkan perlahan agar bentuk J terlihat jelas.",
-      "penggunaan :":
-          "Huruf J digunakan saat mengeja nama atau kata dalam Bahasa Isyarat Indonesia."   
-    },
-    {
-      "title": "Huruf K",
-      "image": "assets/images/k.png",
-      "Cara Membentuk Isyarat :":
-          "Angkat telunjuk dan jari tengah membentuk huruf V, lalu letakkan ibu jari di antara keduanya.",
+          "Sentuhkan ibu jari dengan jari tengah, sementara jari lainnya terbuka.",
       "Posisi Tangan :":
           "Telapak tangan menghadap ke depan.",
       "tips :":
-          "Pastikan sudut V tidak terlalu lebar.",
+          "Pastikan bentuk lingkaran terlihat jelas agar mudah dibedakan.",
       "penggunaan :":
-          "Huruf K digunakan saat mengeja nama atau kata dalam Bahasa Isyarat Indonesia."
+          "Digunakan untuk menunjukkan angka delapan dalam Bahasa Isyarat Indonesia."
     },
     {
-      "title": "Huruf L",
-      "image": "assets/images/l.png",
+      "title": "Angka 9",
+      "image": "assets/images/9.png",
       "Cara Membentuk Isyarat :":
-          "Bentuk huruf L menggunakan ibu jari dan telunjuk.",
+          "Sentuhkan ibu jari dengan jari telunjuk membentuk lingkaran, sementara tiga jari lainnya terbuka.",
       "Posisi Tangan :":
           "Telapak tangan menghadap ke depan.",
       "tips :":
-          "Jaga sudut siku antara ibu jari dan telunjuk tetap jelas.",
+          "Jaga posisi lingkaran tetap jelas dan tidak terlalu kecil.",
       "penggunaan :":
-          "Huruf L digunakan saat mengeja nama atau kata dalam Bahasa Isyarat Indonesia."
+          "Digunakan untuk menunjukkan angka sembilan dalam Bahasa Isyarat Indonesia."
     },
     {
-      "title": "Huruf M",
-      "image": "assets/images/m.png",
+      "title": "Angka 10",
+      "image": "assets/images/10.png",
       "Cara Membentuk Isyarat :":
-          "Letakkan ibu jari di bawah tiga jari pertama.",
+          "Kepalkan tangan lalu angkat ibu jari ke atas.",
       "Posisi Tangan :":
-          "Telapak tangan menghadap ke depan.",
+          "Tangan dapat digerakkan sedikit ke samping atau digoyangkan.",
       "tips :":
-          "Pastikan tiga jari terlihat menutupi ibu jari.",
+          "Gerakan kecil pada ibu jari membantu membedakan angka sepuluh dengan simbol lain.",
       "penggunaan :":
-          "Huruf M digunakan saat mengeja nama atau kata dalam Bahasa Isyarat Indonesia."
-    },
-    {
-      "title": "Huruf N",
-      "image": "assets/images/n.png",
-      "Cara Membentuk Isyarat :":
-          "Letakkan ibu jari di bawah dua jari pertama.",
-      "Posisi Tangan :":
-          "Telapak tangan menghadap ke depan.",
-      "tips :":
-          "Jangan sampai terlihat seperti huruf M.",
-      "penggunaan :":
-          "Huruf N digunakan saat mengeja nama atau kata dalam Bahasa Isyarat Indonesia."
-     },
-    {
-      "title": "Huruf O",
-      "image": "assets/images/o.png",
-      "Cara Membentuk Isyarat :":
-          "Bentuk lingkaran penuh menggunakan semua jari dan ibu jari.",
-      "Posisi Tangan :":
-          "Telapak tangan sedikit menyamping.",
-      "tips :":
-          "Pastikan bentuk lingkaran terlihat sempurna.",
-      "penggunaan :":
-          "Huruf O digunakan saat mengeja nama atau kata dalam Bahasa Isyarat Indonesia."
-    },
-    {
-      "title": "Huruf P",
-      "image": "assets/images/p.png",
-      "Cara Membentuk Isyarat :":
-          "Bentuk seperti huruf K tetapi diarahkan ke bawah.",
-      "Posisi Tangan :":
-          "Tangan menghadap ke bawah sedikit miring.",
-      "tips :":
-          "Pastikan arah tangan jelas berbeda dari K.",
-      "penggunaan :":
-          "Huruf P digunakan saat mengeja nama atau kata dalam Bahasa Isyarat Indonesia."
-    },
-    {
-      "title": "Huruf Q",
-      "image": "assets/images/q.png",
-      "Cara Membentuk Isyarat :":
-          "Bentuk seperti huruf G tetapi diarahkan ke bawah.",
-      "Posisi Tangan :":
-          "Tangan menghadap ke bawah.",
-      "tips :":
-          "Jangan terlalu menekuk telunjuk dan ibu jari.",
-      "penggunaan :":
-          "Huruf Q digunakan saat mengeja nama atau kata dalam Bahasa Isyarat Indonesia."
-    },
-    {
-      "title": "Huruf R",
-      "image": "assets/images/r.png",
-      "Cara Membentuk Isyarat :":
-          "Silangkan jari telunjuk dan jari tengah.",
-      "Posisi Tangan :":
-          "Tangan menghadap ke depan.",
-      "tips :":
-          "Persilangan jari harus terlihat jelas.",
-      "penggunaan :":
-          "Huruf R digunakan saat mengeja nama atau kata dalam Bahasa Isyarat Indonesia."
-    },
-    {
-      "title": "Huruf S",
-      "image": "assets/images/s.png",
-      "Cara Membentuk Isyarat :":
-          "Kepalkan tangan dengan ibu jari berada di depan jari lainnya.",
-      "Posisi Tangan :":
-          "Telapak tangan menghadap ke depan.",
-      "tips :":
-          "Jangan letakkan ibu jari di samping karena bisa terlihat seperti A.",
-      "penggunaan :":
-          "Huruf S digunakan saat mengeja nama atau kata dalam Bahasa Isyarat Indonesia."
-    },
-    {
-      "title": "Huruf T",
-      "image": "assets/images/t.png",
-      "Cara Membentuk Isyarat :":
-          "Letakkan ibu jari di antara telunjuk dan jari tengah.",
-      "Posisi Tangan :":
-          "Telapak tangan menghadap ke depan.",
-      "tips :":
-          "Pastikan ibu jari terlihat sedikit keluar.",
-      "penggunaan :":
-          "Huruf T digunakan saat mengeja nama atau kata dalam Bahasa Isyarat Indonesia."
-    },
-    {
-      "title": "Huruf U",
-      "image": "assets/images/u.png",
-      "Cara Membentuk Isyarat :":
-          "Angkat telunjuk dan jari tengah secara rapat dan lurus.",
-      "Posisi Tangan :":
-          "Telapak tangan menghadap ke depan.",
-      "tips :":
-          "Jaga kedua jari tetap rapat.",
-      "penggunaan :":
-          "Huruf U digunakan saat mengeja nama atau kata dalam Bahasa Isyarat Indonesia."
-    },
-    {
-      "title": "Huruf V",
-      "image": "assets/images/v.png",
-      "Cara Membentuk Isyarat :":
-          "Angkat telunjuk dan jari tengah membentuk huruf V.",
-      "Posisi Tangan :":
-          "Telapak tangan menghadap ke depan.",
-      "tips :":
-          "Sudut V harus jelas terlihat.",
-      "penggunaan :":
-          "Huruf V digunakan saat mengeja nama atau kata dalam Bahasa Isyarat Indonesia."
-    },
-    {
-      "title": "Huruf W",
-      "image": "assets/images/w.png",
-      "Cara Membentuk Isyarat :":
-          "Angkat tiga jari pertama membentuk huruf W.",
-      "Posisi Tangan :":
-          "Telapak tangan menghadap ke depan.",
-      "tips :":
-          "Pastikan jarak antar jari proporsional.",
-      "penggunaan :":
-          "Huruf W digunakan saat mengeja nama atau kata dalam Bahasa Isyarat Indonesia."
-    },
-    {
-      "title": "Huruf X",
-      "image": "assets/images/x.png",
-      "Cara Membentuk Isyarat :":
-          "Tekuk telunjuk membentuk kait sementara jari lain mengepal.",
-      "Posisi Tangan :":
-          "Telapak tangan menghadap ke depan.",
-      "tips :":
-          "Bentuk kait harus jelas terlihat.",
-      "penggunaan :":
-          "Huruf X digunakan saat mengeja nama atau kata dalam Bahasa Isyarat Indonesia."
-    },
-    {
-      "title": "Huruf Y",
-      "image": "assets/images/y.png",
-      "Cara Membentuk Isyarat :":
-          "Angkat ibu jari dan kelingking, jari lainnya ditekuk.",
-      "Posisi Tangan :":
-          "Telapak tangan menghadap ke depan.",
-      "tips :":
-          "Pastikan dua jari terbuka penuh.",
-      "penggunaan :":
-          "Huruf Y digunakan saat mengeja nama atau kata dalam Bahasa Isyarat Indonesia."
-    },
-    {
-      "title": "Huruf Z",
-      "image": "assets/images/z.png",
-      "Cara Membentuk Isyarat :":
-          "Gunakan telunjuk untuk menggambar pola huruf Z di udara.",
-      "Posisi Tangan :":
-          "Gerakan menghadap ke depan.",
-      "tips :":
-          "Gerakan harus membentuk zig-zag yang jelas.",
-      "penggunaan :":
-          "Huruf Z digunakan saat mengeja nama atau kata dalam Bahasa Isyarat Indonesia."
+          "Digunakan untuk menunjukkan angka sepuluh dalam Bahasa Isyarat Indonesia."   
     },
   ];
 
   @override
   Widget build(BuildContext context) {
-    final item = alphabet[currentIndex];
+    final item = angka[currentIndex];
 
     return Scaffold(
       backgroundColor: const Color(0xff0A84FF),
@@ -361,7 +169,7 @@ class _AlphabetScreenState extends State<AlphabetScreen> {
                   const Spacer(),
 
                   const Text(
-                    "Alfabet Isyarat",
+                    "Angka Isyarat",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 28,
@@ -402,7 +210,7 @@ class _AlphabetScreenState extends State<AlphabetScreen> {
                           const SizedBox(height: 25),
 
                           const Text(
-                            "Alfabet Isyarat SIBI",
+                            "Angka Isyarat SIBI",
                             style: TextStyle(
                               fontSize: 28,
                               fontWeight: FontWeight.bold,
@@ -412,7 +220,7 @@ class _AlphabetScreenState extends State<AlphabetScreen> {
                           const SizedBox(height: 5),
 
                           const Text(
-                            "Pelajari huruf A-Z langkah demi langkah",
+                            "Pelajari angka 1-10 langkah demi langkah",
                             style: TextStyle(
                               fontSize: 14,
                               color: Color.fromARGB(255, 0, 0, 0),
@@ -450,8 +258,8 @@ class _AlphabetScreenState extends State<AlphabetScreen> {
                                         children: [
 
                                           Text(
-                                            alphabet[currentIndex]["title"]!
-                                                .replaceAll("Huruf ", ""),
+                                            angka[currentIndex]["title"]!
+                                                .replaceAll("Angka ", ""),
                                             style: const TextStyle(
                                               color: Colors.white,
                                               fontWeight: FontWeight.w600,
@@ -462,7 +270,7 @@ class _AlphabetScreenState extends State<AlphabetScreen> {
                                           const Spacer(),
 
                                           Text(
-                                            "${currentIndex + 1}/26",
+                                            "${currentIndex + 1}/10",
                                             style: const TextStyle(
                                               color: Colors.white,
                                               fontSize: 13,
@@ -477,7 +285,7 @@ class _AlphabetScreenState extends State<AlphabetScreen> {
                                         height: 3,
                                         child: Row(
                                           children: List.generate(
-                                            26,
+                                            10,
                                             (i) => Expanded(  
                                               child: Container(
                                                 margin: const EdgeInsets.symmetric(horizontal: .5),
@@ -502,7 +310,7 @@ class _AlphabetScreenState extends State<AlphabetScreen> {
                                   height: 270,
                                   child: PageView.builder(
                                     controller: _pageController,
-                                    itemCount: alphabet.length,
+                                    itemCount: angka.length,
 
                                     onPageChanged: (index) {
                                       setState(() {
@@ -517,7 +325,7 @@ class _AlphabetScreenState extends State<AlphabetScreen> {
                                         vertical: 5,
                                       ),
                                       child: Image.asset(
-                                        alphabet[index]["image"]!,
+                                        angka[index]["image"]!,
                                         fit: BoxFit.contain,
                                       ),
                                     );
