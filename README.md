@@ -85,16 +85,26 @@ View the interactive prototype:
 This UI/UX project is associated with the research:
 
 **“A Design Thinking Approach to Developing an AI-Driven Mobile Experience for Deaf Inclusivity”**
-
 ## 🚀 Future Development
 
 Future development may include:
-
 * Real-time AI speech recognition
 * Sign language recognition using computer vision
 * Personalized AI communication assistance
 * Expanded sign language learning modules
 * Cross-platform mobile implementation
+
+## 🧩 Backend
+
+`python/` contains experimental computer-vision backend scripts:
+
+- `train_classifier.py`
+- `inference_classifier.py`
+- `collect_data.py`
+- `create_dataset.py`
+- `Hearo_AI.py`
+
+Large model and dataset binaries are not tracked in this repo by default. If needed, store them as release assets or via Git LFS.
 
 ## 📄 License
 

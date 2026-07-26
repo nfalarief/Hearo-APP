@@ -1,1 +1,41 @@
-.DS_Store
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+venv/
+env/
+ENV/
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Model / dataset binaries
+*.p
+*.pkl
+*.pickle
+*.h5
+*.onnx
+*.pt
+*.pth
+
+# Media / data
+data/
+dataset/
+images/
+!Frontend/assets/images/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+Desktop.ini
+
+# Node
+node_modules/
